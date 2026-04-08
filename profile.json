@@ -1,0 +1,23 @@
+{
+  "firstName": "__FIRST_NAME__",
+  "lastName": "__LAST_NAME__",
+  "jobTitle": "Trener personalny",
+  "tagline": "",
+  "bio": "",
+  "city": "__CITY__",
+  "country": "PL",
+  "specialties": [],
+  "languages": ["polski"],
+  "phone": "",
+  "email": "",
+  "website": "",
+  "social": {},
+  "business": {
+    "name": "__COMPANY_NAME__",
+    "taxId": "__NIP__",
+    "registryId": "__REGON__",
+    "classification": ["__PKD__"]
+  },
+  "source": "ceidg",
+  "verified": true
+}

@@ -1,0 +1,23 @@
+---
+import Layout from '@press2ai/theme-stripe/Layout.astro';
+import Hero from '@press2ai/theme-stripe/Hero.astro';
+import ProfileArticle from '@press2ai/theme-stripe/ProfileArticle.astro';
+import { profileSchema, getJsonLd } from '@press2ai/theme-stripe';
+import '@press2ai/theme-stripe/styles/stripe.css';
+import profileData from '../../profile.json';
+
+const profile = profileSchema.parse(profileData);
+const fullName = `${profile.firstName} ${profile.lastName}`;
+const baseUrl = Astro.site?.toString() ?? '';
+const jsonLd = getJsonLd(profile, baseUrl);
+---
+<Layout
+  title={`${fullName} — ${profile.jobTitle}${profile.city ? ` · ${profile.city}` : ''}`}
+  description={profile.bio}
+  siteName={fullName}
+  baseUrl={baseUrl}
+  jsonLd={jsonLd}
+>
+  <Hero profile={profile} />
+  <ProfileArticle profile={profile} />
+</Layout>
